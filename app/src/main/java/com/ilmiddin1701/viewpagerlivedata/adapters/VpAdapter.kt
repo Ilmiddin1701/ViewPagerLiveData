@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.ilmiddin1701.viewpagerlivedata.adapters
 
 import androidx.fragment.app.Fragment
@@ -10,14 +12,14 @@ class VpAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(fragment
     override fun getCount(): Int = 2
 
     override fun getItem(position: Int): Fragment {
-        if (position == 0){
-            return FirstFragment()
+        return if (position == 0){
+            FirstFragment()
         }else {
-            return SecondFragment()
+            SecondFragment()
         }
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         val list = arrayOf("FirstFragment", "SecondFragment")
         return list[position]
     }
