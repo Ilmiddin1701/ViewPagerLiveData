@@ -16,4 +16,9 @@ class VpAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(fragment
             return SecondFragment()
         }
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        val list = arrayOf("FirstFragment", "SecondFragment")
+        return list[position]
+    }
 }

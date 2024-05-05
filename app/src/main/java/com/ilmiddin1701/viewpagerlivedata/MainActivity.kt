@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         vpAdapter = VpAdapter(supportFragmentManager)
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
         binding.viewPager.adapter = vpAdapter
     }
 }
